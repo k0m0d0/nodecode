@@ -2,20 +2,20 @@
 var express = require('express');
 var request = require('request');
 var mysql = require('mysql');
-var connection = connectToDatabase('myHost', 'myUser', 'myPassword', 'myDatabase');
+var connection = connectToDatabase('140.86.15.104', 'Captain', 'welcome1', 'deathstar');
 
 var app = express();
 
 app.use(express.static('public'));
 console.log('Exact name: ' + process.env.ORA_INSTANCE_NAME);
-runGetRequest();
-//runDatabaseQuery();
+//runGetRequest();
+runDatabaseQuery();
 
 // Does a GET request to ip.jsontest.com
 function runGetRequest() {
     
     //sample URL.
-    var url = "http://140.86.15.104:3000/fighters/45/7/green/k0m0d0";
+    var url = "http://140.86.15.104:3000/reactorCore/33/45/green/k0m0d0";
     request(url, function(error, response, body) {
         if(!error) {
             console.log(body);
